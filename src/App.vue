@@ -1,6 +1,27 @@
-<script setup>
+<script>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+
+const spring = 'spring'
+const winter = 'winter'
+
+export default {
+  components: {
+    HelloWorld,
+    TheWelcome
+  },
+
+  data() {
+    return {
+      isVisible: false,
+      name: 'Eddard Stark',
+      house: 'House Stark',
+      phrase: 'The Winter is Coming',
+      isWinter: winter
+    }
+  }
+}
+
 </script>
 
 <template>
@@ -8,7 +29,11 @@ import TheWelcome from './components/TheWelcome.vue'
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <h3>{{ name }} from {{ house }}</h3>
+      <h4 v-if="isWinter === this.winter">{{ phrase }}</h4>
+      <h4 v-else-if="isWinter === this.spring">The Spring is Coming</h4>
+      <h4 v-else>The Summer is Coming</h4>
+      <HelloWorld msg="Componente" />
     </div>
   </header>
 
