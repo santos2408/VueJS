@@ -1,45 +1,16 @@
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-
-const spring = 'spring'
-const winter = 'winter'
+import TheFooter from './components/TheFooter.vue'
 
 export default {
   components: {
-    HelloWorld,
-    TheWelcome
-  },
-
-  data() {
-    return {
-      isVisible: false,
-      name: 'Eddard Stark',
-      house: 'House Stark',
-      phrase: 'The Winter is Coming',
-      isWinter: winter
-    }
+    TheFooter
   }
 }
 
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <h3>{{ name }} from {{ house }}</h3>
-      <h4 v-if="isWinter === this.winter">{{ phrase }}</h4>
-      <h4 v-else-if="isWinter === this.spring">The Spring is Coming</h4>
-      <h4 v-else>The Summer is Coming</h4>
-      <HelloWorld msg="Componente" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <TheFooter />
 </template>
 
 <style>
@@ -51,56 +22,5 @@ export default {
   padding: 2rem;
 
   font-weight: normal;
-}
-
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
-
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
 }
 </style>
